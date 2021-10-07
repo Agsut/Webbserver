@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Värd: 127.0.0.1
--- Tid vid skapande: 23 sep 2021 kl 14:10
+-- Tid vid skapande: 07 okt 2021 kl 14:07
 -- Serverversion: 10.4.20-MariaDB
 -- PHP-version: 8.0.9
 
@@ -43,7 +43,9 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`customerid`, `username`, `firstname`, `lastname`, `address`, `zip`, `city`, `phone`) VALUES
-(1, 'kalle', 'Kalle', 'Anka', 'Stora gatan 1', 12345, 'Ankeborg', '123346');
+(1, 'kalle', 'Kalle', 'Anka', 'Stora gatan 1', 12345, 'Ankeborg', '123346'),
+(2, 'Anka34', 'Anka', 'Manet', 'Järnvägsgatan 32', 23189, 'Växjö', '0707854675'),
+(3, 'Klockansäger5', 'Klockan', 'Säger', 'gatangata56', 76534, 'Stockholm', '0708754875');
 
 -- --------------------------------------------------------
 
@@ -63,7 +65,9 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`orderid`, `produktid`, `antal`, `customerid`) VALUES
-(1, 1, 4, 1);
+(1, 1, 4, 1),
+(2, 12, 56, 2),
+(3, 11, 3, 3);
 
 -- --------------------------------------------------------
 
@@ -84,7 +88,9 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`products`, `name`, `description`, `price`, `picture`) VALUES
-(1, 'Päron', 'Frukt', 100, '');
+(1, 'Päron', 'Frukt', 100, ''),
+(11, 'Äpple', 'Grönt', 25, ''),
+(12, 'Banan', 'Gult', 50, 'banan');
 
 -- --------------------------------------------------------
 
@@ -104,7 +110,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`username`, `email`, `password`, `status`) VALUES
-('kalle', 'kalle@exempel.se', 'qwe123', 1);
+('Anka34', 'Ankangillarkaka@gmail.com', 'Anka78', 0),
+('kalle', 'kalle@exempel.se', 'qwe123', 1),
+('Klockansäger5', 'Klockanärenåtta@gmail.com', 'Klockan60', 5);
 
 --
 -- Index för dumpade tabeller
@@ -148,19 +156,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT för tabell `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customerid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `customerid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT för tabell `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `orderid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `orderid` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT för tabell `products`
 --
 ALTER TABLE `products`
-  MODIFY `products` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `products` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Restriktioner för dumpade tabeller
