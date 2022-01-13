@@ -32,3 +32,4 @@
             echo "Felaktigt lösenord";
         }
     }
+    ?>
